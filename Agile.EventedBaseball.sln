@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{7AA62D54-80BF-454E-BB9A-BC26393AB9D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agile.EventedBaseball.Domain.Game", "Agile.EventedBaseball.Domain.Game\Agile.EventedBaseball.Domain.Game.csproj", "{D296B25C-DF53-4CBC-9FAB-2FFFBCBACB82}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entity", "Entity", "{6DE88D51-7529-4518-8279-FAEFB8F7E621}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B9FC04AD-9F84-42A1-9134-1D7F82D759CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agile.EventBaseball.Domain.Game.Tests", "Agile.EventBaseball.Domain.Game.Tests\Agile.EventBaseball.Domain.Game.Tests.csproj", "{2BAD9714-5299-4A34-B909-9395E83D53BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agile.EventedBaseball.Entity", "Agile.EventedBaseball.Entity\Agile.EventedBaseball.Entity.csproj", "{820631BE-7C56-4EE7-91C6-B4F163A4B20A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agile.EventedBaseball.Runner", "Agile.EventedBaseball.Runner\Agile.EventedBaseball.Runner.csproj", "{31903FAB-3657-4E43-8AC4-728412943B11}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D296B25C-DF53-4CBC-9FAB-2FFFBCBACB82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D296B25C-DF53-4CBC-9FAB-2FFFBCBACB82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D296B25C-DF53-4CBC-9FAB-2FFFBCBACB82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D296B25C-DF53-4CBC-9FAB-2FFFBCBACB82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BAD9714-5299-4A34-B909-9395E83D53BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BAD9714-5299-4A34-B909-9395E83D53BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BAD9714-5299-4A34-B909-9395E83D53BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BAD9714-5299-4A34-B909-9395E83D53BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{820631BE-7C56-4EE7-91C6-B4F163A4B20A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{820631BE-7C56-4EE7-91C6-B4F163A4B20A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{820631BE-7C56-4EE7-91C6-B4F163A4B20A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{820631BE-7C56-4EE7-91C6-B4F163A4B20A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31903FAB-3657-4E43-8AC4-728412943B11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31903FAB-3657-4E43-8AC4-728412943B11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31903FAB-3657-4E43-8AC4-728412943B11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31903FAB-3657-4E43-8AC4-728412943B11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D296B25C-DF53-4CBC-9FAB-2FFFBCBACB82} = {7AA62D54-80BF-454E-BB9A-BC26393AB9D8}
+		{B9FC04AD-9F84-42A1-9134-1D7F82D759CC} = {7AA62D54-80BF-454E-BB9A-BC26393AB9D8}
+		{2BAD9714-5299-4A34-B909-9395E83D53BB} = {B9FC04AD-9F84-42A1-9134-1D7F82D759CC}
+		{820631BE-7C56-4EE7-91C6-B4F163A4B20A} = {6DE88D51-7529-4518-8279-FAEFB8F7E621}
+	EndGlobalSection
+EndGlobal
