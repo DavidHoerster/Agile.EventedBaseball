@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Agile.EventedBaseball.Runner.Messages
+namespace Agile.EventedBaseball.ActorPlayerRetriever.Messages
 {
-    public class EndOfFeed
+    public class Complete
     {
     }
 }

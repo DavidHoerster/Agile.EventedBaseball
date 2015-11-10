@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Agile.EventedBaseball.Runner.Messages
+namespace Agile.EventedBaseball.Messages
 {
     public class GameInfoMessage
     {

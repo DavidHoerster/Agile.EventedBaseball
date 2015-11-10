@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Agile.EventedBaseball.Entity.GameRecord;
-using Agile.EventedBaseball.Runner.Messages;
+using Agile.EventedBaseball.Messages;
 using Akka.Actor;
 using MongoDB.Driver;
 
@@ -20,7 +20,8 @@ namespace Agile.EventedBaseball.Runner.Actors
             var db = client.GetDatabase(url.DatabaseName);
             var count = 1;
 
-            var playerSupervisor = Context.ActorOf(PlayerSupervisor.Create(), "playerSupervisor");
+            var eventSupervisor = Context.ActorSelection("akka.tcp://atBatWriter@localhost:50000/user/supervisor");
+            var playerSupervisor = Context.ActorOf(PlayerSupervisor.Create(eventSupervisor), "playerSupervisor");
 
             Receive<GameRecordMessage>(g =>
             {
@@ -59,7 +60,7 @@ namespace Agile.EventedBaseball.Runner.Actors
 
             Receive<EndOfFeed>(msg =>
             {
-                Context.Child("playerSupervisor").Tell(msg);
+                playerSupervisor.Tell(msg);
             });
         }
     }

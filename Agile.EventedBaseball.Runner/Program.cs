@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Agile.EventedBaseball.Domain.Game.Parsers;
 using Agile.EventedBaseball.Entity.GameRecord;
 using Agile.EventedBaseball.Runner.Actors;
-using Agile.EventedBaseball.Runner.Messages;
+using Agile.EventedBaseball.Messages;
 using Akka.Actor;
 
 namespace Agile.EventedBaseball.Runner
@@ -16,11 +17,10 @@ namespace Agile.EventedBaseball.Runner
     {
         static void Main(string[] args)
         {
+            var files = Directory.GetFiles(@"C:\DATA\RetroSheet", "2014PIT*.EV*");
+
             var system = ActorSystem.Create("baseball");
-            var actorCoordinator = system.ActorOf<GameCoordinator>("gameCoordinator");
-
-
-            var files = Directory.GetFiles(@"C:\DATA\RetroSheet", "2014*.EV*");
+            var gameCoordinator = system.ActorOf<GameCoordinator>("gameCoordinator");
 
             foreach (var file in files)
             {
@@ -41,10 +41,10 @@ namespace Agile.EventedBaseball.Runner
 
                         var msg = new GameRecordMessage(gameId, record);
 
-                        actorCoordinator.Tell(msg);
+                        gameCoordinator.Tell(msg);
                     }
 
-                    actorCoordinator.Tell(new EndOfFeed());
+                    gameCoordinator.Tell(new EndOfFeed());
                 }
                 Console.WriteLine("Completed {0}", file);
             }

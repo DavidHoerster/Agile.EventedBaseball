@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Agile.EventedBaseball.Domain.Game.Parsers;
 using Agile.EventedBaseball.Entity;
-using Agile.EventedBaseball.Runner.Messages;
+using Agile.EventedBaseball.Messages;
 using Akka.Actor;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -34,8 +34,8 @@ namespace Agile.EventedBaseball.Runner.Actors
 
             Receive<BatterEventMessage>(msg =>
             {
-
-                switch (BatterEventParser.BatterEventResult(msg.BatterEvent))
+                BatterEventType hitType = BatterEventParser.BatterEventResult(msg.BatterEvent);
+                switch (hitType)
                 {
                     case BatterEventType.Double:
                         _batterInfo.Doubles++;
@@ -72,6 +72,7 @@ namespace Agile.EventedBaseball.Runner.Actors
                         _batterInfo.AtBats++;
                         break;
                 }
+
             });
 
             Receive<EndOfFeed>(msg =>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Agile.EventedBaseball.Entity;
-using Agile.EventedBaseball.Runner.Messages;
+using Agile.EventedBaseball.Messages;
 using Akka.Actor;
 using MongoDB.Driver;
 

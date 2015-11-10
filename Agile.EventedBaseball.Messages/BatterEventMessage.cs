@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Agile.EventedBaseball.Runner.Messages
+namespace Agile.EventedBaseball.Messages
 {
     public class BatterEventMessage
     {
@@ -12,9 +12,9 @@ namespace Agile.EventedBaseball.Runner.Messages
         public readonly String Count;
         public readonly String BatterEvent;
 
-        public BatterEventMessage(String id, String count, String batterEvent)
+        public BatterEventMessage(String playerId, String count, String batterEvent)
         {
-            PlayerId = id; Count = count; BatterEvent = batterEvent;
+            PlayerId = playerId; Count = count; BatterEvent = batterEvent;
         }
     }
 }

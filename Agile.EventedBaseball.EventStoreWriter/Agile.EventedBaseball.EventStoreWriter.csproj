@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{31903FAB-3657-4E43-8AC4-728412943B11}</ProjectGuid>
+    <ProjectGuid>{2B29B957-B867-42B8-AB24-570EED23AA2A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Agile.EventedBaseball.Runner</RootNamespace>
-    <AssemblyName>Agile.EventedBaseball.Runner</AssemblyName>
+    <RootNamespace>Agile.EventedBaseball.EventStoreWriter</RootNamespace>
+    <AssemblyName>Agile.EventedBaseball.EventStoreWriter</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -57,18 +57,6 @@
       <HintPath>..\packages\Helios.1.4.1\lib\net45\Helios.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MongoDB.Bson, Version=2.1.0.124, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MongoDB.Bson.2.1.0-rc0\lib\net45\MongoDB.Bson.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MongoDB.Driver, Version=2.1.0.124, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MongoDB.Driver.2.1.0-rc0\lib\net45\MongoDB.Driver.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MongoDB.Driver.Core, Version=2.1.0.124, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MongoDB.Driver.Core.2.1.0-rc0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -83,11 +71,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actors\AtBatActor.cs" />
-    <Compile Include="Actors\BatterActor.cs" />
-    <Compile Include="Actors\GameCoordinator.cs" />
-    <Compile Include="Actors\GameInfoActor.cs" />
-    <Compile Include="Actors\PlayerSupervisor.cs" />
+    <Compile Include="Actors\AtBatEventWriterActor.cs" />
+    <Compile Include="Actors\AtBatSupervisor.cs" />
     <Compile Include="Events\EventBase.cs" />
     <Compile Include="Events\PlayerWasAtBat.cs" />
     <Compile Include="Program.cs" />
@@ -99,6 +84,14 @@
     <None Include="protos\google\protobuf\csharp_options.proto" />
     <None Include="protos\google\protobuf\descriptor.proto" />
     <None Include="protos\tutorial\addressbook.proto" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CHANGES.txt" />
+    <Content Include="licenses\license.txt" />
+    <Content Include="licenses\protoc-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Messages\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Agile.EventedBaseball.Domain.Game\Agile.EventedBaseball.Domain.Game.csproj">
@@ -113,14 +106,6 @@
       <Project>{9ea9012d-e8c9-4d87-b956-7c9ac1884ba2}</Project>
       <Name>Agile.EventedBaseball.Messages</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CHANGES.txt" />
-    <Content Include="licenses\license.txt" />
-    <Content Include="licenses\protoc-license.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Messages\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

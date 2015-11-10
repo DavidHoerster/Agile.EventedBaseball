@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Agile.EventedBaseball.Entity.GameRecord;
 
-namespace Agile.EventedBaseball.Runner.Messages
+namespace Agile.EventedBaseball.Messages
 {
     public class GameRecordMessage
     {
